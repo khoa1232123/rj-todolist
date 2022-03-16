@@ -1,0 +1,120 @@
+.todo-form {
+  width: 450px;
+  padding: 15px;
+  margin: 10% auto;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.todo-input {
+  @include flex(center, center);
+  margin-bottom: 10px;
+  background-color: var(--blue);
+  border-radius: 5px;
+  padding: 2px;
+
+  .iko-input {
+    margin-bottom: 0;
+
+    input {
+      height: 60px;
+      border-color: var(--blue);
+      background-color: var(--white);
+    }
+  }
+  &__input {
+    width: 100%;
+    position: relative;
+  }
+
+  &__colors {
+    position: absolute;
+
+    top: 20px;
+    right: 10px;
+
+    &:hover .colors {
+      display: flex;
+    }
+  }
+}
+
+.todo-item {
+  @include flex(center, center);
+  font-size: 18px;
+  padding: 20px 15px;
+  border-radius: 5px;
+  * {
+    color: var(--white);
+  }
+
+  ~ .todo-item {
+    margin-top: 10px;
+  }
+  &__value {
+    width: 100%;
+    position: relative;
+    input {
+      display: none;
+    }
+
+    .todo-input__colors {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__edit {
+    cursor: pointer;
+    span {
+      display: none;
+    }
+  }
+
+  &__remove {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  &.active {
+    .todo-item {
+      &__value {
+        span {
+          display: none;
+        }
+        input {
+          display: block;
+          background-color: transparent;
+          border-color: transparent;
+          outline: none;
+          width: 100%;
+          font-size: 18px;
+        }
+        .todo-input__colors {
+          display: block;
+          position: absolute;
+          top: 2px;
+        }
+      }
+      &__edit {
+        i {
+          display: none;
+        }
+        span {
+          display: block;
+          padding: 5px;
+          border-radius: 3px;
+          font-size: 14px;
+          background-color: var(--white);
+          font-weight: 600;
+        }
+      }
+      &__remove {
+        display: none;
+      }
+    }
+  }
+}

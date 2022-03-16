@@ -1,0 +1,38 @@
+body {
+  background: linear-gradient(
+    112.4deg,
+    #44bcff 0%,
+    rgba(250, 29, 241, 0) 130.13%
+  );
+}
+
+.colors {
+  width: 260px;
+  height: 60px;
+  padding: 10px 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 var(--transparent-black-3);
+  display: none;
+  z-index: 9;
+  &-item {
+    width: 15px;
+    border-radius: 50%;
+    height: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: var(--white);
+    text-align: center;
+    line-height: 15px;
+    cursor: pointer;
+
+    i {
+      font-size: 10px;
+    }
+  }
+}
